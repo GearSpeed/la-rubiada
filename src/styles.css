@@ -1,3 +1,162 @@
 /* You can add global styles to this file, and also import other style files */
 
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Noto+Serif:opsz,wght@8..144,500;8..144,700&display=swap');
 @import 'tailwindcss';
+
+:root {
+  /* Brand palette */
+  --color-primary: #7b5e45;
+  --color-primary-700: #5f4631;
+  --color-primary-500: #7b5e45;
+  --color-primary-300: #b29071;
+  --color-primary-100: #e5d2bf;
+
+  --color-secondary: #c5a059;
+  --color-secondary-700: #9c7b3c;
+  --color-secondary-500: #c5a059;
+  --color-secondary-300: #dfc085;
+  --color-secondary-100: #f1dfba;
+
+  --color-tertiary: #ede0d4;
+  --color-surface: #f7efe6;
+  --color-surface-muted: #efe4d8;
+
+  --color-neutral: #4e463f;
+  --color-neutral-900: #26221e;
+  --color-neutral-700: #4e463f;
+  --color-neutral-500: #7f7871;
+  --color-neutral-300: #b6b0aa;
+  --color-neutral-100: #ebe8e4;
+
+  --color-danger: #b42318;
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  /* Typography */
+  --font-headline: 'Noto Serif', Georgia, 'Times New Roman', serif;
+  --font-body: 'Manrope', 'Segoe UI', sans-serif;
+
+  /* Spacing, borders, effects */
+  --radius-sm: 0.4rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-pill: 999px;
+  --border-soft: 1px solid #d9cbbb;
+  --shadow-soft: 0 10px 30px rgb(37 27 20 / 10%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  min-height: 100dvh;
+}
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-neutral-700);
+  background:
+    radial-gradient(circle at 15% 10%, rgb(197 160 89 / 22%), transparent 35%),
+    radial-gradient(circle at 85% 0%, rgb(123 94 69 / 12%), transparent 40%),
+    linear-gradient(180deg, #f9f3ec 0%, #f4ebe1 100%);
+  line-height: 1.5;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: var(--font-headline);
+  color: var(--color-neutral-900);
+  line-height: 1.2;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: inherit;
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-secondary);
+  outline-offset: 3px;
+}
+
+.surface-card {
+  background: var(--color-tertiary);
+  border: var(--border-soft);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-soft);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  min-height: 2.5rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid transparent;
+  border-radius: var(--radius-sm);
+  font: 600 0.92rem/1 var(--font-body);
+  letter-spacing: 0.01em;
+  text-decoration: none;
+  cursor: pointer;
+  transition: transform 140ms ease, filter 140ms ease, background-color 140ms ease,
+    color 140ms ease, border-color 140ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  filter: brightness(1.03);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-secondary {
+  background: var(--color-secondary);
+  color: var(--color-neutral-900);
+}
+
+.btn-inverted {
+  background: var(--color-neutral-900);
+  color: var(--color-white);
+}
+
+.btn-outlined {
+  background: transparent;
+  border-color: var(--color-primary-300);
+  color: var(--color-primary-700);
+}
+
+.input {
+  width: 100%;
+  min-height: 2.55rem;
+  padding: 0.55rem 0.75rem;
+  background: var(--color-white);
+  color: var(--color-neutral-900);
+  border: 1px solid #d4c7b7;
+  border-radius: var(--radius-sm);
+  font: 500 0.92rem/1.2 var(--font-body);
+}
+
+.input::placeholder {
+  color: var(--color-neutral-500);
+}

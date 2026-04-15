@@ -1,0 +1,10 @@
+@import "../../../styles.css";
+
+nav{
+  background-color: var(--color-neutral-400);
+}
+
+nav h1{
+    color: var(--color-primary);
+    font-size: larger;
+  }
