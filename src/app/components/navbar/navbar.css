@@ -7,4 +7,5 @@ nav{
 nav h1{
     color: var(--color-primary);
     font-size: larger;
+    font-style: italic;
   }
