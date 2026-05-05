@@ -1,9 +1,22 @@
 import { Routes } from '@angular/router';
-import { LandingPage } from './pages/landing-page/landing-page';
 
 export const routes: Routes = [
   {
-    path: '',
-    component: LandingPage
+    path: 'dashboard',
+    loadComponent: ()=> import('./pages/dashboard-page/dashboard-page'),
+    children: [
+      {
+        path: 'hero',
+        loadComponent: ()=> import('./pages/hero-page/hero-page')
+      },
+      {
+        path: '**',
+        redirectTo: 'hero'
+      },
+    ]
+  },
+  {
+    path: '**',
+    redirectTo: 'dashboard'
   }
 ];

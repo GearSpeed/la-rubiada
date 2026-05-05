@@ -1,5 +1,26 @@
 <div class="hidden md:flex gap-8 items-center">
-  <a class="text-[#775a19] border-b-2 border-[#775a19] pb-1 font-bold font-serif tracking-widest uppercase text-sm transition-all duration-300" href="#itinerary">Itinerary</a>
-  <a class="text-[#211a15]/70 dark:text-[#fff8f4]/70 hover:text-[#72563e] font-serif tracking-widest uppercase text-sm transition-all duration-300" href="#details">Details</a>
-  <a class="text-[#211a15]/70 dark:text-[#fff8f4]/70 hover:text-[#72563e] font-serif tracking-widest uppercase text-sm transition-all duration-300" href="#gallery">Gallery</a>
+  <!-- <a class="text-[#775a19] border-b-2 border-[#775a19] pb-1 font-bold font-serif tracking-widest uppercase text-sm transition-all duration-300" href="#itinerary">{{envs.SIDE_MENU_CONTENT_ITINERARY}}</a> -->
+
+  @for (item of menuOptions; track item.route) {
+
+    <a
+
+      routerLinkActive="text-[#775a19] border-b-2 border-[#775a19] pb-1 font-bold"
+      class="
+        text-[#211a15]/70
+        dark:text-[#fff8f4]/70
+        hover:text-[#72563e]
+        font-serif
+        tracking-widest
+        uppercase
+        text-sm
+        transition-all
+        duration-300"
+      [href]="item.route"
+    >
+      {{item.label}}
+    </a>
+
+  }
+
 </div>
