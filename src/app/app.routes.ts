@@ -10,6 +10,18 @@ export const routes: Routes = [
         loadComponent: ()=> import('./pages/hero-page/hero-page')
       },
       {
+        path: 'details',
+        loadComponent: ()=> import('./pages/detail-page/detail-page')
+      },
+      {
+        path: 'itinerary',
+        loadComponent: ()=> import('./pages/itinerary-page/itinerary-page')
+      },
+      {
+        path: 'gallery',
+        loadComponent: ()=> import('./pages/gallery-page/gallery-page')
+      },
+      {
         path: '**',
         redirectTo: 'hero'
       },

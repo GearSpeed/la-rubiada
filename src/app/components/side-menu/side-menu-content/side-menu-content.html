@@ -4,7 +4,7 @@
   @for (item of menuOptions; track item.route) {
 
     <a
-
+      [routerLink]="item.route"
       routerLinkActive="text-[#775a19] border-b-2 border-[#775a19] pb-1 font-bold"
       class="
         text-[#211a15]/70
@@ -16,7 +16,6 @@
         text-sm
         transition-all
         duration-300"
-      [href]="item.route"
     >
       {{item.label}}
     </a>

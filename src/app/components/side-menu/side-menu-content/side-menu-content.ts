@@ -20,15 +20,15 @@ export class SideMenuContent {
   menuOptions: MenuOptions[] = [
     {
       label: this.envs.SIDE_MENU_CONTENT_ITINERARY,
-      route:'#itinerary'
+      route:'/dashboard/itinerary'
     },
     {
       label: this.envs.SIDE_MENU_CONTENT_DETAILS,
-      route:'#details'
+      route:'/dashboard/details'
     },
     {
       label: this.envs.SIDE_MENU_CONTENT_GALLERY,
-      route:'#gallery'
+      route:'/dashboard/gallery'
     },
   ]
 

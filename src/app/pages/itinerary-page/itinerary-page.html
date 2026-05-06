@@ -1,0 +1,46 @@
+<section class="h-auto py-24 bg-surface-container-low overflow-hidden" id="itinerary">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="text-center mb-16">
+      <span class="text-secondary font-headline italic text-lg">{{envs.ITINERARY_PAGE_SUBTITLE}}</span>
+      <h2 class="text-5xl font-headline text-on-surface mt-2">{{envs.ITINERARY_PAGE_TITLE}}</h2>
+    </div>
+    <div class="grid lg:grid-cols-3 gap-8">
+      <!-- Morning Block -->
+      <div class="space-y-6 flex flex-col">
+        @for (item of morningItineraryCards; track item.label) {
+
+          <itinerary-card
+            [schedule]="item.schedule"
+            [label]="item.label"
+            [content]="item.content"
+          />
+
+        }
+      </div>
+      <!-- Mid-day Block -->
+      <div class="space-y-6 lg:mt-12 flex flex-col">
+        @for (item of midDayItineraryCards; track item.label) {
+
+          <itinerary-card
+            [schedule]="item.schedule"
+            [label]="item.label"
+            [content]="item.content"
+          />
+
+        }
+      </div>
+      <!-- Evening Block -->
+      <div class="space-y-6 lg:mt-24 flex flex-col">
+        @for (item of eveningItineraryCards; track item.label) {
+
+          <itinerary-card
+            [schedule]="item.schedule"
+            [label]="item.label"
+            [content]="item.content"
+          />
+
+        }
+      </div>
+    </div>
+  </div>
+</section>
