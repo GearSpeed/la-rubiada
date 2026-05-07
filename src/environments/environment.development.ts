@@ -9,6 +9,17 @@ export const environment = {
   SIDE_MENU_TITLE_URL: '/dashboard/hero',
   ITINERARY_PAGE_SUBTITLE: 'Nuestra Jornada',
   ITINERARY_PAGE_TITLE: 'El Itinerario',
+  DETAIL_PAGE_TITLE:'Detalles del Encuentro',
+  DETAIL_PAGE_SCHEDULE_EVENT:'Fecha del Evento',
+  DETAIL_PAGE_SCHEDULE:'Sábado, 15 de Agosto de 2026',
+  DETAIL_PAGE_PLACE: 'Lugar',
+  DETAIL_PAGE_ADDRESS: 'Quinta Los Olivos, Valle del Mezquital',
+  DETAIL_PAGE_ADD_GOOGLE_CALENDAR: 'Agregar a Google Calendar',
+  GALLERY_PAGE_TITLE:'Momentos que vendrán',
+  GALLERY_PAGE_DESCRIPTION:'Un espacio reservado para las risas y abrazos que compartiremos en 2026.',
+  GALLERY_PAGE_WATCH_ALBUM: 'Ver Álbum Histórico',
+  GALLERY_PAGE_UPLOAD_PHOTOS: 'Subir Fotos',
+
 
 
 };

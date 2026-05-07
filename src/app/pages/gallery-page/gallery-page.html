@@ -1,37 +1,37 @@
 <section class="py-24 bg-surface h-screen" id="gallery">
-<div class="max-w-7xl mx-auto px-6">
-<div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
-<div>
-<h2 class="text-4xl font-headline text-primary mb-2">Momentos que vendrán</h2>
-<p class="text-on-surface-variant">Un espacio reservado para las risas y abrazos que compartiremos en 2026.</p>
-</div>
-<button class="border border-outline-variant px-6 py-3 text-sm font-label uppercase tracking-widest hover:bg-surface-container transition-colors">Ver Álbum Histórico</button>
-</div>
-<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-<div class="aspect-square bg-surface-container flex items-center justify-center border-2 border-dashed border-outline-variant/30 rounded-lg group hover:bg-surface-container-high transition-all cursor-pointer">
-<div class="text-center">
-<span class="material-symbols-outlined text-4xl text-outline-variant/60 group-hover:scale-110 transition-transform" data-icon="add_a_photo">add_a_photo</span>
-<p class="text-[10px] uppercase tracking-widest text-outline mt-2 font-bold">Subir Fotos</p>
-</div>
-</div>
-<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
-<img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="blurred artistic background of a family gathering around a dinner table with soft candlelight and warm shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjzaom0APM8HQm4OB3YDFBvL2Wh_KuvmD6SA_8LdL9FXGuwChVRbBR3mIgpS9yAmxEaA3RqNgtjyWczDpK3Ol5gYlr26X4YOiOy7k-WsaPxk9qx6ugxsSdY7iPNav0zmnGzm1mSyS4gJ7nSJnjfoiNwMsQH0NFAUtSKAjKYmBjfXCzHm9xpkL94IYL8r-RA4bkF2yckOSjIoAwQQL0Ac6fgay-W-skj6nrv8WJ1V60mPhKS0dZs-8I2PGTDVHelCE7rPw09wFOYslw"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
-</div>
-</div>
-<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
-<img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="close up of rustic outdoor table setting with lace tablecloth and wildflower centerpieces in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOQh3Vq0Aj8lJSTALy3ehRlzcgQE05o98L7569ix6vnOhNIIMXbWU-QzXYgMVh9HkSdBH2gUH4ZcyVFCyZiZapeWtgNOPuTW5KdQIn3sV4rMLVNk2O9SilOkQ8rBN0gT4CAOQIXKhofx11d7x6D2-_pJU8btWycLL0jkmERw7oaCL3iCJZmjeMBWk8LfCbgPZhvCWCDiWqlPTOsuNqNcnz3MR9NIjlH2pnA-92VlRXtf1ibVvsqijIixXIBfJTfpkwBPANn7AsbTlE"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
-</div>
-</div>
-<div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
-<img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="distant view of a cozy campfire in a twilight forest clearing with small tents nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeUorDAh-be0BdO5IXIcdS4QuJa-0KSkRLWa2l1xuHIwemPCVW3CRe6Iu7zJiG3ej5ipQoLSFmnw3q3tdoN4v14Rh_anW8yFgTqhkUe-sNPnq-iWsHE8dAjq1hZ1uSVIsD89zJ7Swie0FvAiHR6baLZBDZMpQF9rdNcef8__a-kxjKQWQGvuyplX-FziYX4CMvdLV9PuOA0RSouP3mWN1aKCLh_E6I5287Tme3rYfX80F6L1RdcxdV4NO0gYEiedXN8b79pyILCfIQ"/>
-<div class="absolute inset-0 flex items-center justify-center">
-<span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
-</div>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
+      <div>
+        <h2 class="text-4xl font-headline text-primary mb-2">{{envs.GALLERY_PAGE_TITLE}}</h2>
+        <p class="text-on-surface-variant">{{envs.GALLERY_PAGE_DESCRIPTION}}</p>
+      </div>
+      <button class="border border-outline-variant px-6 py-3 text-sm font-label uppercase tracking-widest hover:bg-surface-container transition-colors">{{envs.GALLERY_PAGE_WATCH_ALBUM}}</button>
+    </div>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div class="aspect-square bg-surface-container flex items-center justify-center border-2 border-dashed border-outline-variant/30 rounded-lg group hover:bg-surface-container-high transition-all cursor-pointer">
+        <div class="text-center">
+          <span class="material-symbols-outlined text-4xl text-outline-variant/60 group-hover:scale-110 transition-transform" data-icon="add_a_photo">add_a_photo</span>
+          <p class="text-[10px] uppercase tracking-widest text-outline mt-2 font-bold">{{envs.GALLERY_PAGE_UPLOAD_PHOTOS}}</p>
+        </div>
+      </div>
+      <div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
+        <img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="blurred artistic background of a family gathering around a dinner table with soft candlelight and warm shadows" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjzaom0APM8HQm4OB3YDFBvL2Wh_KuvmD6SA_8LdL9FXGuwChVRbBR3mIgpS9yAmxEaA3RqNgtjyWczDpK3Ol5gYlr26X4YOiOy7k-WsaPxk9qx6ugxsSdY7iPNav0zmnGzm1mSyS4gJ7nSJnjfoiNwMsQH0NFAUtSKAjKYmBjfXCzHm9xpkL94IYL8r-RA4bkF2yckOSjIoAwQQL0Ac6fgay-W-skj6nrv8WJ1V60mPhKS0dZs-8I2PGTDVHelCE7rPw09wFOYslw"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
+        </div>
+      </div>
+      <div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
+        <img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="close up of rustic outdoor table setting with lace tablecloth and wildflower centerpieces in soft focus" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDOQh3Vq0Aj8lJSTALy3ehRlzcgQE05o98L7569ix6vnOhNIIMXbWU-QzXYgMVh9HkSdBH2gUH4ZcyVFCyZiZapeWtgNOPuTW5KdQIn3sV4rMLVNk2O9SilOkQ8rBN0gT4CAOQIXKhofx11d7x6D2-_pJU8btWycLL0jkmERw7oaCL3iCJZmjeMBWk8LfCbgPZhvCWCDiWqlPTOsuNqNcnz3MR9NIjlH2pnA-92VlRXtf1ibVvsqijIixXIBfJTfpkwBPANn7AsbTlE"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
+        </div>
+      </div>
+      <div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
+        <img alt="" class="w-full h-full object-cover opacity-30 grayscale" data-alt="distant view of a cozy campfire in a twilight forest clearing with small tents nearby" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBeUorDAh-be0BdO5IXIcdS4QuJa-0KSkRLWa2l1xuHIwemPCVW3CRe6Iu7zJiG3ej5ipQoLSFmnw3q3tdoN4v14Rh_anW8yFgTqhkUe-sNPnq-iWsHE8dAjq1hZ1uSVIsD89zJ7Swie0FvAiHR6baLZBDZMpQF9rdNcef8__a-kxjKQWQGvuyplX-FziYX4CMvdLV9PuOA0RSouP3mWN1aKCLh_E6I5287Tme3rYfX80F6L1RdcxdV4NO0gYEiedXN8b79pyILCfIQ"/>
+        <div class="absolute inset-0 flex items-center justify-center">
+          <span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
