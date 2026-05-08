@@ -1,0 +1,24 @@
+@if (demo()) {
+
+  <div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
+    <img
+      alt=""
+      class="w-full h-full object-cover opacity-30 grayscale"
+      data-alt="blurred artistic background of a family gathering around a dinner table with soft candlelight and warm shadows"
+      src={{urlPhoto()}}/>
+    <div class="absolute inset-0 flex items-center justify-center">
+      <span class="text-outline-variant text-xs uppercase tracking-widest font-bold">Próximamente</span>
+    </div>
+  </div>
+
+} @else {
+
+  <div class="aspect-square bg-surface-container rounded-lg overflow-hidden relative">
+    <img
+      alt=""
+      class="w-full h-full object-cover"
+      data-alt="blurred artistic background of a family gathering around a dinner table with soft candlelight and warm shadows"
+      src={{urlPhoto()}}/>
+  </div>
+}
+

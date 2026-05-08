@@ -6,7 +6,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
   selector: 'side-menu-title',
   imports: [
     RouterLink,
-    RouterLinkActive
   ],
   templateUrl: './side-menu-title.html',
 })
