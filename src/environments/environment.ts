@@ -9,7 +9,7 @@ export const environment = {
   SIDE_MENU_TITLE_URL: '/dashboard/hero',
 
   //* hero-page pages
-  HERO_PAGE_MOTTO: 'En la distancia y cercanía siempre seremos una familia',
+  HERO_PAGE_MOTTO: 'En la distancia y cercanía, siempre seremos una familia',
   HERO_PAGE_HOSTED: 'Organizado con amor por Familia Sampayo Rubio',
 
   //* itinerary-page pages
