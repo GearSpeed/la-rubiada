@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 
 @Component({
-  selector: 'side-menu-calendar',
+  selector: 'side-menu-collapse-menu',
   imports: [],
-  templateUrl: './side-menu-calendar.html',
+  templateUrl: './side-menu-collapse-menu.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
-export class SideMenuCalendar { }
+export class SideMenuCollapseMenu { }

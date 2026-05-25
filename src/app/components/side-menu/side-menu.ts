@@ -1,14 +1,14 @@
 import { Component } from '@angular/core';
 import { SideMenuTitle } from './side-menu-title/side-menu-title'
 import { SideMenuContent } from './side-menu-content/side-menu-content'
-import { SideMenuCalendar } from './side-menu-calendar/side-menu-calendar'
+import { SideMenuCollapseMenu } from './side-menu-collapse-menu/side-menu-collapse-menu'
 
 @Component({
   selector: 'side-menu',
   imports: [
     SideMenuTitle,
     SideMenuContent,
-    SideMenuCalendar,
+    SideMenuCollapseMenu,
   ],
   templateUrl: './side-menu.html'
 })
