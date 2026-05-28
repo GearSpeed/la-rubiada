@@ -30,6 +30,9 @@ export const environment = {
   GALLERY_PAGE_WATCH_ALBUM: 'Ver Álbum Histórico',
   GALLERY_PAGE_UPLOAD_PHOTOS: 'Subir Fotos',
 
+  //* resources
+  ESCUDO_APELLIDO_RUBIO: '../../app/images/escudo-de-madera.png'
+
 
 
 };
