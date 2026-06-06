@@ -31,6 +31,7 @@ export default class GalleryPage implements AfterViewInit, OnDestroy {
 
   private audio: HTMLAudioElement | null = null;
   private readonly musicFiles = MUSIC_FILES;
+  protected readonly songTitle = signal('');
 
   ngAfterViewInit(): void {
     this.startMusic();
@@ -136,9 +137,12 @@ export default class GalleryPage implements AfterViewInit, OnDestroy {
   private playRandom(): void {
     if (!this.audio) return;
     const randomIndex = Math.floor(Math.random() * this.musicFiles.length);
-    this.audio.src = `./music/${this.musicFiles[randomIndex]}`;
+    const fileName = this.musicFiles[randomIndex];
+    this.audio.src = `./music/${fileName}`;
     this.audio.load();
     this.audio.play().catch(() => {});
+
+    this.songTitle.set(fileName.replace(/\.mp3$/i, '').replace(/-/g, ' '));
   }
 
   private stopMusic(): void {

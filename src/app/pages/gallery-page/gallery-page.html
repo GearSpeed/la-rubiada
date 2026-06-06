@@ -43,11 +43,11 @@
           (click)="$event.stopPropagation()"
         />
       }
-    </div>
-    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4" (click)="$event.stopPropagation()">
-      <button (click)="stopSlideshow()" class="bg-white/20 hover:bg-white/40 text-white size-10 flex items-center justify-center rounded-full transition-all">
-        <span class="material-symbols-outlined">close</span>
-      </button>
+      <div class="absolute bottom-4 left-1/2 -translate-x-1/2 z-20" (click)="$event.stopPropagation()">
+        <button (click)="stopSlideshow()" class="bg-white/20 hover:bg-white/40 text-white size-10 flex items-center justify-center rounded-full transition-all">
+          <span class="material-symbols-outlined">close</span>
+        </button>
+      </div>
     </div>
   </div>
 }
@@ -76,8 +76,13 @@
   </div>
 }
 
-<button (click)="toggleMusic()" class="fixed bottom-6 right-6 z-50 bg-white text-primary size-12 flex items-center justify-center rounded-full shadow-lg hover:opacity-85 transition-all active:scale-90">
-  <span class="material-symbols-outlined text-2xl">
+<button (click)="toggleMusic()" class="fixed bottom-6 right-6 z-50 bg-white text-primary h-12 flex items-center rounded-full shadow-lg hover:opacity-85 active:scale-90 overflow-hidden transition-opacity duration-300">
+  <div class="overflow-hidden transition-all duration-500 ease-in-out"
+       [style.max-width]="isPlaying() ? '280px' : '0'"
+       [style.opacity]="isPlaying() ? '1' : '0'">
+    <span class="pl-4 pr-2 text-sm font-medium whitespace-nowrap leading-none">{{ songTitle() }}</span>
+  </div>
+  <span class="material-symbols-outlined text-2xl px-3 shrink-0 block">
     {{ isPlaying() ? 'volume_up' : 'volume_off' }}
   </span>
 </button>
