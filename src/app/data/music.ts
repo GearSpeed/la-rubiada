@@ -4,8 +4,18 @@ export const MUSIC_FILES = [
   'Hay-Unos-Ojos.mp3',
   'Summer-Nights.mp3',
   'You-re-The-One-That-I-Want.mp3',
-  'Omar-e-Irving-Mi-Chorro-de-Voz.mp3',
+  'Omar-e-Irving-Mi-Chorro-De-Voz.mp3',
   'Raquel-Hay-Unos-Ojos.mp3',
   'Raquel-Albur.mp3',
-  'Albur.mp3'
+  'Albur.mp3',
+  'Amor-De-Hombre.mp3',
+  'Caballo-Viejo.mp3',
+  'De-Niña-a-Mujer.mp3',
+  'Flor-De-Azalea.mp3',
+  'La-Vida-Sigue-Igual.mp3',
+  'Los-Ejes-De-Mi-Carreta.mp3',
+  'Morenita-Mia.mp3',
+  'Nosotros.mp3',
+  'Prieta-Linda.mp3',
+  'Te-Solté-La-Rienda.mp3'
 ];

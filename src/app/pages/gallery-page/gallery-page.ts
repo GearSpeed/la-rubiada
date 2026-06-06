@@ -130,6 +130,8 @@ export default class GalleryPage implements AfterViewInit, OnDestroy {
   private startMusic(): void {
     this.audio = new Audio();
     this.audio.volume = 0.02;
+    this.audio.addEventListener('playing', () => this.isPlaying.set(true));
+    this.audio.addEventListener('pause', () => this.isPlaying.set(false));
     this.audio.addEventListener('ended', () => this.playRandom());
     this.playRandom();
   }
@@ -140,7 +142,7 @@ export default class GalleryPage implements AfterViewInit, OnDestroy {
     const fileName = this.musicFiles[randomIndex];
     this.audio.src = `./music/${fileName}`;
     this.audio.load();
-    this.audio.play().catch(() => {});
+    this.audio.play().catch(() => this.isPlaying.set(false));
 
     this.songTitle.set(fileName.replace(/\.mp3$/i, '').replace(/-/g, ' '));
   }

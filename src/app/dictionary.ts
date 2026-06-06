@@ -7,6 +7,7 @@ export const DICT = {
 
   HERO_PAGE_MOTTO: 'En la distancia y cercanía, siempre seremos una familia',
   HERO_PAGE_HOSTED: 'Organizado con amor por Familia Sampayo Rubio',
+  HERO_IMAGE: './images/Rubiada/007.png',
 
   ITINERARY_PAGE_SUBTITLE: 'Nuestra Jornada',
   ITINERARY_PAGE_TITLE: 'El Itinerario',
