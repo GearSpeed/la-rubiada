@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '@environments/environment';
+import { DICT } from '@dict';
 import { ItineraryCard } from 'src/app/components/itinerary-card/itinerary-card';
 
 interface ItineraryCardInterface{
@@ -15,7 +15,7 @@ interface ItineraryCardInterface{
 })
 export default class ItineraryPage {
 
-  envs = environment
+  dict = DICT
 
   morningItineraryCards: ItineraryCardInterface[] = [
     {

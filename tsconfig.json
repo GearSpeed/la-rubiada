@@ -6,7 +6,8 @@
     "baseUrl":".",
     "paths":{
       "@environments/*": ["src/environments/*"],
-      "@resources/*": ["src/app/images/*"]
+      "@resources/*": ["src/app/images/*"],
+      "@dict": ["src/app/dictionary.ts"]
     },
     "strict": true,
     "noImplicitOverride": true,

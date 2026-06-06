@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '@environments/environment';
+import { DICT } from '@dict';
 import { RouterLink, RouterLinkActive } from "@angular/router";
 
 interface MenuOptions{
@@ -14,20 +14,20 @@ interface MenuOptions{
 })
 export class SideMenuContent {
 
-  envs = environment
+  dict = DICT
 
 
   menuOptions: MenuOptions[] = [
     {
-      label: this.envs.SIDE_MENU_CONTENT_ITINERARY,
+      label: this.dict.SIDE_MENU_CONTENT_ITINERARY,
       route:'/dashboard/itinerary'
     },
     {
-      label: this.envs.SIDE_MENU_CONTENT_DETAILS,
+      label: this.dict.SIDE_MENU_CONTENT_DETAILS,
       route:'/dashboard/details'
     },
     {
-      label: this.envs.SIDE_MENU_CONTENT_GALLERY,
+      label: this.dict.SIDE_MENU_CONTENT_GALLERY,
       route:'/dashboard/gallery'
     },
   ]

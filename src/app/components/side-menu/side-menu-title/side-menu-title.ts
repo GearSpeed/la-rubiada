@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { environment } from '@environments/environment';
+import { DICT } from '@dict';
 import { RouterLink, RouterLinkActive } from '@angular/router';
 
 @Component({
@@ -11,6 +11,6 @@ import { RouterLink, RouterLinkActive } from '@angular/router';
 })
 export class SideMenuTitle {
 
-  envs = environment
+  dict = DICT
 
 }

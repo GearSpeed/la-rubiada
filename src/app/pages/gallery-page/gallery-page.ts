@@ -1,37 +1,150 @@
-import { Component } from '@angular/core';
-import { environment } from '@environments/environment';
+import { Component, signal, computed, OnDestroy, AfterViewInit, HostListener } from '@angular/core';
+import { DICT } from '@dict';
 import { PhotoCard } from 'src/app/components/photo-card/photo-card';
-
-interface PhotoContent {
-
-  urlPhoto: string,
-  demo: boolean
-
-}
-
+import { MUSIC_FILES } from 'src/app/data/music';
+import { PHOTOS, PhotoContent } from 'src/app/data/gallery';
 
 @Component({
   selector: 'gallery-page',
   imports: [PhotoCard],
   templateUrl: './gallery-page.html',
 })
-export default class GalleryPage {
+export default class GalleryPage implements AfterViewInit, OnDestroy {
 
-  envs = environment
+  dict = DICT;
 
-  photoContent: PhotoContent[] = [
-    {
-      urlPhoto: 'https://lh3.googleusercontent.com/aida-public/AB6AXuCjzaom0APM8HQm4OB3YDFBvL2Wh_KuvmD6SA_8LdL9FXGuwChVRbBR3mIgpS9yAmxEaA3RqNgtjyWczDpK3Ol5gYlr26X4YOiOy7k-WsaPxk9qx6ugxsSdY7iPNav0zmnGzm1mSyS4gJ7nSJnjfoiNwMsQH0NFAUtSKAjKYmBjfXCzHm9xpkL94IYL8r-RA4bkF2yckOSjIoAwQQL0Ac6fgay-W-skj6nrv8WJ1V60mPhKS0dZs-8I2PGTDVHelCE7rPw09wFOYslw',
-      demo: true
-    },
-    {
-      urlPhoto: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDOQh3Vq0Aj8lJSTALy3ehRlzcgQE05o98L7569ix6vnOhNIIMXbWU-QzXYgMVh9HkSdBH2gUH4ZcyVFCyZiZapeWtgNOPuTW5KdQIn3sV4rMLVNk2O9SilOkQ8rBN0gT4CAOQIXKhofx11d7x6D2-_pJU8btWycLL0jkmERw7oaCL3iCJZmjeMBWk8LfCbgPZhvCWCDiWqlPTOsuNqNcnz3MR9NIjlH2pnA-92VlRXtf1ibVvsqijIixXIBfJTfpkwBPANn7AsbTlE',
-      demo: true
-    },
-    {
-      urlPhoto: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBeUorDAh-be0BdO5IXIcdS4QuJa-0KSkRLWa2l1xuHIwemPCVW3CRe6Iu7zJiG3ej5ipQoLSFmnw3q3tdoN4v14Rh_anW8yFgTqhkUe-sNPnq-iWsHE8dAjq1hZ1uSVIsD89zJ7Swie0FvAiHR6baLZBDZMpQF9rdNcef8__a-kxjKQWQGvuyplX-FziYX4CMvdLV9PuOA0RSouP3mWN1aKCLh_E6I5287Tme3rYfX80F6L1RdcxdV4NO0gYEiedXN8b79pyILCfIQ',
-      demo: true
-    },
-  ]
+  protected readonly isPlaying = signal(true);
+  protected readonly photoContent = PHOTOS;
+  protected readonly selectedIndex = signal<number | null>(null);
+  protected readonly selectedPhoto = computed(() => {
+    const i = this.selectedIndex();
+    return i !== null ? this.photoContent[i] : null;
+  });
+
+  protected readonly slideshowActive = signal(false);
+  protected readonly slideshowPhoto = signal<PhotoContent | null>(null);
+  protected readonly previousPhoto = signal<PhotoContent | null>(null);
+  protected readonly slideKey = signal(0);
+  private slideshowTimer: ReturnType<typeof setInterval> | null = null;
+  private slideshowQueue: PhotoContent[] = [];
+  private queueIndex = 0;
+
+  private audio: HTMLAudioElement | null = null;
+  private readonly musicFiles = MUSIC_FILES;
+
+  ngAfterViewInit(): void {
+    this.startMusic();
+  }
+
+  ngOnDestroy(): void {
+    this.stopSlideshow();
+    this.stopMusic();
+  }
+
+  @HostListener('document:keydown', ['$event'])
+  protected onKeydown(event: KeyboardEvent): void {
+    if (this.selectedIndex() === null) return;
+    switch (event.key) {
+      case 'ArrowRight':
+        this.next();
+        break;
+      case 'ArrowLeft':
+        this.prev();
+        break;
+      case 'Escape':
+        this.closeLightbox();
+        break;
+    }
+  }
+
+  protected openLightbox(index: number): void {
+    this.selectedIndex.set(index);
+  }
+
+  protected closeLightbox(): void {
+    this.selectedIndex.set(null);
+  }
+
+  protected next(): void {
+    const i = this.selectedIndex();
+    if (i === null) return;
+    this.selectedIndex.set((i + 1) % this.photoContent.length);
+  }
+
+  protected prev(): void {
+    const i = this.selectedIndex();
+    if (i === null) return;
+    this.selectedIndex.set((i - 1 + this.photoContent.length) % this.photoContent.length);
+  }
+
+  protected startSlideshow(): void {
+    this.shuffleQueue();
+    this.slideshowActive.set(true);
+    this.showRandomSlide();
+    this.slideshowTimer = setInterval(() => this.showRandomSlide(), 3000);
+  }
+
+  private shuffleQueue(): void {
+    this.slideshowQueue = [...this.photoContent];
+    for (let i = this.slideshowQueue.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [this.slideshowQueue[i], this.slideshowQueue[j]] = [this.slideshowQueue[j], this.slideshowQueue[i]];
+    }
+    this.queueIndex = 0;
+  }
+
+  private showRandomSlide(): void {
+    const current = this.slideshowPhoto();
+    if (current) {
+      this.previousPhoto.set(current);
+      setTimeout(() => this.previousPhoto.set(null), 800);
+    }
+    if (this.queueIndex >= this.slideshowQueue.length) {
+      this.shuffleQueue();
+    }
+    this.slideshowPhoto.set(this.slideshowQueue[this.queueIndex]);
+    this.queueIndex++;
+    this.slideKey.update(v => v + 1);
+  }
+
+  protected stopSlideshow(): void {
+    this.slideshowActive.set(false);
+    this.slideshowPhoto.set(null);
+    this.previousPhoto.set(null);
+    if (this.slideshowTimer) {
+      clearInterval(this.slideshowTimer);
+      this.slideshowTimer = null;
+    }
+  }
+
+  protected toggleMusic(): void {
+    if (this.isPlaying()) {
+      this.audio?.pause();
+      this.isPlaying.set(false);
+    } else {
+      this.audio?.play().then(() => this.isPlaying.set(true)).catch(() => {});
+    }
+  }
+
+  private startMusic(): void {
+    this.audio = new Audio();
+    this.audio.volume = 0.02;
+    this.audio.addEventListener('ended', () => this.playRandom());
+    this.playRandom();
+  }
+
+  private playRandom(): void {
+    if (!this.audio) return;
+    const randomIndex = Math.floor(Math.random() * this.musicFiles.length);
+    this.audio.src = `./music/${this.musicFiles[randomIndex]}`;
+    this.audio.load();
+    this.audio.play().catch(() => {});
+  }
+
+  private stopMusic(): void {
+    this.audio?.pause();
+    this.audio = null;
+    this.isPlaying.set(false);
+  }
 
 }

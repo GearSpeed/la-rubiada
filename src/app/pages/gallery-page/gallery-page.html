@@ -2,17 +2,82 @@
   <div class="max-w-7xl mx-auto px-6">
     <div class="flex flex-col md:flex-row justify-between items-end gap-6 mb-12">
       <div>
-        <h2 class="text-4xl font-headline text-primary mb-2">{{envs.GALLERY_PAGE_TITLE}}</h2>
-        <p class="text-on-surface-variant">{{envs.GALLERY_PAGE_DESCRIPTION}}</p>
+        <h2 class="text-4xl font-headline text-primary mb-2">{{dict.GALLERY_PAGE_TITLE}}</h2>
+        <p class="text-on-surface-variant">{{dict.GALLERY_PAGE_DESCRIPTION}}</p>
       </div>
     </div>
+    <div class="mb-10">
+      <button (click)="startSlideshow()" class="w-full inline-flex items-center justify-center gap-3 bg-linear-to-r from-primary to-primary-container text-gray-400 px-8 py-4 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all active:scale-95">
+        <span class="material-symbols-outlined">slideshow</span>
+        Iniciar Presentación
+      </button>
+    </div>
     <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-      @for (item of photoContent; track item.urlPhoto) {
-        <photo-card
-          [demo]="item.demo",
-          [urlPhoto]="item.urlPhoto"
-        />
+      @for (item of photoContent; track item.urlPhoto; let i = $index) {
+        <div class="cursor-pointer" (click)="openLightbox(i)">
+          <photo-card
+            [demo]="item.demo"
+            [urlPhoto]="item.urlPhoto"
+          />
+        </div>
       }
     </div>
   </div>
 </section>
+
+@if (slideshowActive(); as photo) {
+  <div class="fixed inset-0 z-50 bg-black flex flex-col items-center justify-center" (click)="stopSlideshow(); $event.stopPropagation()">
+    <div class="relative w-full h-[85vh]">
+      @if (previousPhoto(); as prev) {
+        <img
+          class="absolute inset-0 w-full h-full object-contain animate-fade-out"
+          [src]="prev.urlPhoto"
+          alt=""
+        />
+      }
+      @for (k of [slideKey()]; track k) {
+        <img
+          class="absolute inset-0 w-full h-full object-contain animate-fade-in z-10"
+          [src]="slideshowPhoto()!.urlPhoto"
+          alt=""
+          (click)="$event.stopPropagation()"
+        />
+      }
+    </div>
+    <div class="absolute bottom-8 left-1/2 -translate-x-1/2 flex items-center gap-4" (click)="$event.stopPropagation()">
+      <button (click)="stopSlideshow()" class="bg-white/20 hover:bg-white/40 text-white size-10 flex items-center justify-center rounded-full transition-all">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+  </div>
+}
+
+@if (selectedPhoto(); as photo) {
+  <div class="fixed inset-0 z-40 bg-black/80 flex items-center justify-center" (click)="closeLightbox()">
+    <div class="relative max-w-[90vw] max-h-[90vh] flex items-center justify-center" (click)="$event.stopPropagation()">
+      <img
+        class="max-w-full max-h-[90vh] object-contain"
+        [src]="photo.urlPhoto"
+        alt=""
+      />
+    </div>
+
+    <button (click)="prev(); $event.stopPropagation()" class="absolute left-4 top-1/2 -translate-y-1/2 z-50 bg-white/20 hover:bg-white/40 text-white size-12 flex items-center justify-center rounded-full transition-all">
+      <span class="material-symbols-outlined text-3xl">chevron_left</span>
+    </button>
+
+    <button (click)="next(); $event.stopPropagation()" class="absolute right-4 top-1/2 -translate-y-1/2 z-50 bg-white/20 hover:bg-white/40 text-white size-12 flex items-center justify-center rounded-full transition-all">
+      <span class="material-symbols-outlined text-3xl">chevron_right</span>
+    </button>
+
+    <button (click)="closeLightbox(); $event.stopPropagation()" class="absolute top-4 right-4 z-50 bg-white/20 hover:bg-white/40 text-white size-10 flex items-center justify-center rounded-full transition-all">
+      <span class="material-symbols-outlined text-2xl">close</span>
+    </button>
+  </div>
+}
+
+<button (click)="toggleMusic()" class="fixed bottom-6 right-6 z-50 bg-white text-primary size-12 flex items-center justify-center rounded-full shadow-lg hover:opacity-85 transition-all active:scale-90">
+  <span class="material-symbols-outlined text-2xl">
+    {{ isPlaying() ? 'volume_up' : 'volume_off' }}
+  </span>
+</button>
