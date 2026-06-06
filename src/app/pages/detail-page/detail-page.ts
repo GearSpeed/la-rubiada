@@ -11,8 +11,8 @@ export default class DetailPage {
   dict = DICT
   protected readonly clipboardCopy = signal(false);
 
-  protected copyToClipboard(): void {
-    navigator.clipboard.writeText('638180000181201078').then(() => {
+  protected copyToClipboard(text: string): void {
+    navigator.clipboard.writeText(text).then(() => {
       this.clipboardCopy.set(true);
       setTimeout(() => this.clipboardCopy.set(false), 3000);
     });
