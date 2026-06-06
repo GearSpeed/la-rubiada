@@ -2,8 +2,8 @@
 <section class="py-24 bg-surface px-6 min-h-screen" id="details">
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="space-y-8">
-      <h2 class="text-4xl font-headline text-primary">{{dict.DETAIL_PAGE_TITLE}}</h2>
-      <div class="space-y-6">
+      <h2 class="text-4xl font-headline text-primary text-center mb-8">{{dict.DETAIL_PAGE_TITLE}}</h2>
+      <div class="space-y-6 pt-2">
         <div class="flex items-start gap-4">
           <div class="bg-surface-container-high p-3 rounded-lg">
             <span class="material-symbols-outlined text-secondary" data-icon="calendar_today">calendar_today</span>
@@ -23,7 +23,7 @@
           </div>
         </div>
       </div>
-      <div class="pt-4">
+      <div>
         <a [href]="googleCalendarUrl()" target="_blank" class="w-full inline-flex items-center justify-center gap-3 bg-linear-to-r from-primary to-primary-container text-gray-400 px-8 py-4 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all active:scale-95 group">
           <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
           {{dict.DETAIL_PAGE_ADD_GOOGLE_CALENDAR}}
