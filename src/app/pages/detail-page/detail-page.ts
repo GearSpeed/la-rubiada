@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { DICT } from '@dict';
 
 @Component({
@@ -9,6 +9,14 @@ import { DICT } from '@dict';
 export default class DetailPage {
 
   dict = DICT
+  protected readonly clipboardCopy = signal(false);
+
+  protected copyToClipboard(): void {
+    navigator.clipboard.writeText('638180000181201078').then(() => {
+      this.clipboardCopy.set(true);
+      setTimeout(() => this.clipboardCopy.set(false), 3000);
+    });
+  }
 
   googleCalendarUrl(): string {
     const params = new URLSearchParams({

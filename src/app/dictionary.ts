@@ -25,6 +25,13 @@ export const DICT = {
   GALLERY_PAGE_UPLOAD_PHOTOS: 'Subir Fotos',
 
   DETAIL_PAGE_MAPS_URL: 'https://maps.app.goo.gl/SrWeLAoENHnGYC1T7?g_st=aw',
+  DETAIL_PAGE_PAYMENT_TITLE: 'Pago',
+  DETAIL_PAGE_PAYMENT_BANK: 'Banco: Nu',
+  DETAIL_PAGE_PAYMENT_ACCOUNT: 'No. de cuenta:',
+  DETAIL_PAGE_PAYMENT_ACCOUNT_NUMBER: '638180000181201078',
+  DETAIL_PAGE_PAYMENT_BENEFICIARY: 'Beneficiario: Ashanty Deseusa Sampayo',
+  DETAIL_PAGE_PAYMENT_INSTRUCTION: 'Favor de mandar captura de su comprobante al:',
+  DETAIL_PAGE_PAYMENT_PHONE: '+52 1 55 7066 5853',
 
   ESCUDO_APELLIDO_RUBIO: './images/escudo-de-madera-rustico-sin-fondo.png',
   IMAGEN_DETAIL_PAGE: './images/Rubiada/005.png',

@@ -3,7 +3,7 @@
   <div class="max-w-5xl mx-auto grid md:grid-cols-2 gap-12 items-center">
     <div class="space-y-8">
       <h2 class="text-4xl font-headline text-primary text-center mb-8">{{dict.DETAIL_PAGE_TITLE}}</h2>
-      <div class="space-y-6 pt-2">
+      <div class="space-y-6 pt-8">
         <div class="flex items-start gap-4">
           <div class="bg-surface-container-high p-3 rounded-lg">
             <span class="material-symbols-outlined text-secondary" data-icon="calendar_today">calendar_today</span>
@@ -22,8 +22,21 @@
             <a [href]="dict.DETAIL_PAGE_MAPS_URL" target="_blank" rel="noopener noreferrer" class="text-on-surface-variant hover:text-primary transition-colors hover:underline inline-flex items-center gap-1">{{dict.DETAIL_PAGE_ADDRESS}}<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span></a>
           </div>
         </div>
-      </div>
-      <div>
+        </div>
+        <div class="flex items-start gap-4">
+          <div class="bg-surface-container-high p-3 rounded-lg">
+            <span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
+          </div>
+          <div>
+            <p class="font-headline text-lg">{{dict.DETAIL_PAGE_PAYMENT_TITLE}}</p>
+            <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_BANK}}</p>
+            <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_ACCOUNT}} <button (click)="copyToClipboard()" class="underline hover:text-primary cursor-pointer transition-colors">{{dict.DETAIL_PAGE_PAYMENT_ACCOUNT_NUMBER}}</button></p>
+            <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_BENEFICIARY}}</p>
+            <p class="text-on-surface-variant mt-2">{{dict.DETAIL_PAGE_PAYMENT_INSTRUCTION}}</p>
+            <a href="tel:+5215570665853" class="text-on-surface-variant hover:text-primary transition-colors">{{dict.DETAIL_PAGE_PAYMENT_PHONE}}</a>
+          </div>
+        </div>
+        <div>
         <a [href]="googleCalendarUrl()" target="_blank" class="w-full inline-flex items-center justify-center gap-3 bg-linear-to-r from-primary to-primary-container text-gray-400 px-8 py-4 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all active:scale-95 group">
           <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
           {{dict.DETAIL_PAGE_ADD_GOOGLE_CALENDAR}}
@@ -37,4 +50,10 @@
       </div>
     </div>
   </div>
+
+  @if (clipboardCopy()) {
+    <div class="fixed top-20 right-4 z-50 bg-white text-on-surface px-4 py-3 rounded-lg shadow-lg animate-fade-in border border-gray-200">
+      <p class="text-sm font-medium">No. de cuenta copiado al portapapeles</p>
+    </div>
+  }
 </section>
