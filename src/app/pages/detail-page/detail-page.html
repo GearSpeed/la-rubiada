@@ -24,6 +24,15 @@
           </div>
         </div>
         </div>
+        <div class="flex items-start gap-4 cursor-pointer" (click)="openCartel()">
+          <div class="bg-surface-container-high p-3 rounded-lg">
+            <span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
+          </div>
+          <div>
+            <p class="font-headline text-lg">{{dict.DETAIL_PAGE_COVERAGE_TITLE}}</p>
+            <p class="text-on-surface-variant inline-flex items-center gap-1">{{dict.DETAIL_PAGE_COVERAGE_CTA}}<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span></p>
+          </div>
+        </div>
         <div class="flex items-start gap-4">
           <div class="bg-surface-container-high p-3 rounded-lg">
             <span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
@@ -55,6 +64,17 @@
   @if (clipboardCopy()) {
     <div class="fixed top-20 right-4 z-50 bg-white text-on-surface px-4 py-3 rounded-lg shadow-lg animate-fade-in border border-gray-200">
       <p class="text-sm font-medium">{{dict.DETAIL_PAGE_COPY_MESSAGE}}</p>
+    </div>
+  }
+
+  @if (cartelActive()) {
+    <div class="fixed inset-0 z-50 bg-black/80 flex items-center justify-center" (click)="closeCartel()">
+      <div class="relative max-w-[90vw] max-h-[90vh]" (click)="$event.stopPropagation()">
+        <img class="max-w-full max-h-[90vh] object-contain" [src]="dict.DETAIL_PAGE_CARTEL_IMAGE" alt="" />
+      </div>
+      <button (click)="closeCartel(); $event.stopPropagation()" class="absolute bottom-4 left-1/2 -translate-x-1/2 z-50 bg-white/20 hover:bg-white/40 text-white size-10 flex items-center justify-center rounded-full transition-all">
+        <span class="material-symbols-outlined">close</span>
+      </button>
     </div>
   }
 </section>

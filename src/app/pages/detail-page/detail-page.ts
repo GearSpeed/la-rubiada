@@ -10,6 +10,15 @@ export default class DetailPage {
 
   dict = DICT
   protected readonly clipboardCopy = signal(false);
+  protected readonly cartelActive = signal(false);
+
+  protected openCartel(): void {
+    this.cartelActive.set(true);
+  }
+
+  protected closeCartel(): void {
+    this.cartelActive.set(false);
+  }
 
   protected copyToClipboard(text: string): void {
     navigator.clipboard.writeText(text).then(() => {

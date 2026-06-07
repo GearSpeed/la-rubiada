@@ -35,6 +35,9 @@ export const DICT = {
   DETAIL_PAGE_PAYMENT_INSTRUCTION: 'Favor de mandar captura de su comprobante al:',
   DETAIL_PAGE_PAYMENT_PHONE: '+52 1 55 7066 5853',
   DETAIL_PAGE_COPY_MESSAGE: 'Se copió al portapapeles',
+  DETAIL_PAGE_COVERAGE_TITLE: 'Lo que cubre tu cooperación',
+  DETAIL_PAGE_COVERAGE_CTA: 'Click aquí',
+  DETAIL_PAGE_CARTEL_IMAGE: './images/cartel.png',
 
   ESCUDO_APELLIDO_RUBIO: './images/escudo-de-madera-rustico-sin-fondo.png',
   IMAGEN_DETAIL_PAGE: './images/Rubiada/007.png',
