@@ -37,5 +37,8 @@ export const DICT = {
 
   ESCUDO_APELLIDO_RUBIO: './images/escudo-de-madera-rustico-sin-fondo.png',
   IMAGEN_DETAIL_PAGE: './images/Rubiada/005.png',
-  IMAGEN_DETAIL_PAGE_DESKTOP: './images/Gallery/001.png'
+  IMAGEN_DETAIL_PAGE_DESKTOP: './images/Gallery/001.png',
+
+  LABEL_FOOTER: 'Con Amor Familia Sampayo Rubio',
+  REGISTER_LABEL:'© 2026 La Rubiada',
 };
