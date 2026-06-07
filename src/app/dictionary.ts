@@ -17,6 +17,7 @@ export const DICT = {
   DETAIL_PAGE_SCHEDULE: 'Sábado, 05 de Diciembre de 2026',
   DETAIL_PAGE_PLACE: 'Lugar',
   DETAIL_PAGE_ADDRESS: 'Villas Chalco, Chalco de Diaz Covarrubias',
+  DETAIL_PAGE_DIRECTION: '"Sigan el camino amarillo 🟡"',
   DETAIL_PAGE_ADD_GOOGLE_CALENDAR: 'Agregar a Google Calendar',
 
   GALLERY_PAGE_TITLE: 'Galería familiar',
