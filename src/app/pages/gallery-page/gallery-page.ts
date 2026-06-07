@@ -129,7 +129,7 @@ export default class GalleryPage implements AfterViewInit, OnDestroy {
 
   private startMusic(): void {
     this.audio = new Audio();
-    this.audio.volume = 0.02;
+    this.audio.volume = 0.08;
     this.audio.addEventListener('playing', () => this.isPlaying.set(true));
     this.audio.addEventListener('pause', () => this.isPlaying.set(false));
     this.audio.addEventListener('ended', () => this.playRandom());
