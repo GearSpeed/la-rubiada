@@ -7,7 +7,7 @@ export const DICT = {
 
   HERO_PAGE_MOTTO: 'En la distancia y cercanía, siempre seremos una familia',
   HERO_PAGE_HOSTED: 'Organizado con amor por Familia Sampayo Rubio',
-  HERO_IMAGE: './images/Rubiada/007.png',
+  HERO_IMAGE: './images/Rubiada/010.png',
 
   ITINERARY_PAGE_SUBTITLE: 'Nuestra Jornada',
   ITINERARY_PAGE_TITLE: 'El Itinerario',
@@ -26,7 +26,8 @@ export const DICT = {
   GALLERY_PAGE_UPLOAD_PHOTOS: 'Subir Fotos',
 
   DETAIL_PAGE_MAPS_URL: 'https://maps.app.goo.gl/SrWeLAoENHnGYC1T7?g_st=aw',
-  DETAIL_PAGE_PAYMENT_TITLE: 'Cooperación de $250',
+  DETAIL_PAGE_PAYMENT_TITLE: 'Cooperación de ',
+  DETAIL_PAGE_PAYMENT_PRICE: '$300',
   DETAIL_PAGE_PAYMENT_BANK: 'Banco: Nu',
   DETAIL_PAGE_PAYMENT_ACCOUNT: 'No. de cuenta:',
   DETAIL_PAGE_PAYMENT_ACCOUNT_NUMBER: '638180000181201078',
@@ -36,8 +37,8 @@ export const DICT = {
   DETAIL_PAGE_COPY_MESSAGE: 'Se copió al portapapeles',
 
   ESCUDO_APELLIDO_RUBIO: './images/escudo-de-madera-rustico-sin-fondo.png',
-  IMAGEN_DETAIL_PAGE: './images/Rubiada/005.png',
-  IMAGEN_DETAIL_PAGE_DESKTOP: './images/Gallery/001.png',
+  IMAGEN_DETAIL_PAGE: './images/Rubiada/007.png',
+  IMAGEN_DETAIL_PAGE_DESKTOP: './images/Rubiada/001.png',
 
   LABEL_FOOTER: 'Con Amor Familia Sampayo Rubio',
   REGISTER_LABEL:'© 2026 La Rubiada',
