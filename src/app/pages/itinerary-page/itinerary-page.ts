@@ -69,7 +69,7 @@ export default class ItineraryPage {
     {
       schedule: '10:30 PM',
       label: 'Cierre del Evento',
-      content: 'Fogata bajo las estrellas y casas de campaña para los que deseen pernoctar.'
+      content: 'Fogata bajo las estrellas y casas de campaña para los que deseen pernoctar. 🏕️'
     },
 
   ]
