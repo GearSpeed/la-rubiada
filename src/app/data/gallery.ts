@@ -47,4 +47,5 @@ export const PHOTOS: PhotoContent[] = [
   { urlPhoto: './images/Gallery/041.jpg', demo: false },
   { urlPhoto: './images/Gallery/042.jpg', demo: false },
   { urlPhoto: './images/Gallery/043.jpg', demo: false },
+  { urlPhoto: './images/Gallery/044.jpg', demo: false },
 ];
