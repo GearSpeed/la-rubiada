@@ -26,12 +26,12 @@ export default class ItineraryPage {
     {
       schedule: '2:30 PM - 3:30 PM',
       label: 'Carrera de costales',
-      content: 'Equipos de 3 personas, 3 vueltas. ¡Preparad vuestras piernas!'
+      content: 'Comencemos con ganas. ¡Preparad vuestras piernas!'
     },
     {
       schedule: '3:30 PM - 4:30 PM',
       label: 'Rally Familiar',
-      content: 'Juegos combinados: resorte, globo, búsqueda, topo y más retos sorpresa.'
+      content: 'Juegos combinados: globos, vasos, búsqueda y más retos sorpresa.'
     },
 
   ]

@@ -23,30 +23,39 @@
             <p class="text-on-surface-variant italic mt-1">{{dict.DETAIL_PAGE_DIRECTION}}</p>
           </div>
         </div>
-        </div>
-        <div class="flex items-start gap-4 cursor-pointer" (click)="openCartel()">
-          <div class="bg-surface-container-high p-3 rounded-lg">
-            <span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
-          </div>
-          <div>
-            <p class="font-headline text-lg">{{dict.DETAIL_PAGE_COVERAGE_TITLE}}</p>
-            <p class="text-on-surface-variant inline-flex items-center gap-1">{{dict.DETAIL_PAGE_COVERAGE_CTA}}<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span></p>
-          </div>
-        </div>
-        <div class="flex items-start gap-4">
-          <div class="bg-surface-container-high p-3 rounded-lg">
-            <span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
-          </div>
-          <div>
-            <p class="font-headline text-lg">{{dict.DETAIL_PAGE_PAYMENT_TITLE}}<strong class="font-bold text-lg">{{dict.DETAIL_PAGE_PAYMENT_PRICE}}</strong></p>
-            <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_BANK}}</p>
-            <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_ACCOUNT}} <button (click)="copyToClipboard('638180000181201078')" class="underline hover:text-primary cursor-pointer transition-colors">{{dict.DETAIL_PAGE_PAYMENT_ACCOUNT_NUMBER}}</button></p>
-            <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_BENEFICIARY}}</p>
-            <p class="text-on-surface-variant mt-2">{{dict.DETAIL_PAGE_PAYMENT_INSTRUCTION}}</p>
-            <button (click)="copyToClipboard('5215570665853')" class="text-on-surface-variant hover:text-primary transition-colors underline cursor-pointer">{{dict.DETAIL_PAGE_PAYMENT_PHONE}}</button>
-          </div>
+      </div>
+      <div class="flex items-start gap-4">
+        <div class="bg-surface-container-high p-3 rounded-lg">
+          <span class="material-symbols-outlined text-secondary" data-icon="payments">payments</span>
         </div>
         <div>
+          <p class="font-headline text-lg">{{dict.DETAIL_PAGE_PAYMENT_TITLE}}<strong class="font-bold text-lg">{{dict.DETAIL_PAGE_PAYMENT_PRICE}}</strong></p>
+          <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_BANK}}</p>
+          <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_ACCOUNT}} <button (click)="copyToClipboard('638180000181201078')" class="underline hover:text-primary cursor-pointer transition-colors">{{dict.DETAIL_PAGE_PAYMENT_ACCOUNT_NUMBER}}</button></p>
+          <p class="text-on-surface-variant">{{dict.DETAIL_PAGE_PAYMENT_BENEFICIARY}}</p>
+          <p class="text-on-surface-variant mt-2">{{dict.DETAIL_PAGE_PAYMENT_INSTRUCTION}}</p>
+          <button (click)="copyToClipboard('5215570665853')" class="text-on-surface-variant hover:text-primary transition-colors underline cursor-pointer">{{dict.DETAIL_PAGE_PAYMENT_PHONE}}</button>
+        </div>
+      </div>
+      <div class="md:hidden">
+        <div class="flex items-start gap-4 mb-2">
+          <div class="bg-surface-container-high p-3 rounded-lg shrink-0">
+            <span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
+          </div>
+          <p class="font-headline text-lg">{{dict.DETAIL_PAGE_COVERAGE_TITLE}}</p>
+        </div>
+        <img class="w-full rounded-lg shadow-lg" [src]="dict.DETAIL_PAGE_CARTEL_IMAGE" alt="" />
+      </div>
+      <div class="hidden md:flex items-start gap-4 cursor-pointer" (click)="openCartel()">
+        <div class="bg-surface-container-high p-3 rounded-lg shrink-0">
+          <span class="material-symbols-outlined text-secondary" data-icon="description">description</span>
+        </div>
+        <div>
+          <p class="font-headline text-lg">{{dict.DETAIL_PAGE_COVERAGE_TITLE}}</p>
+          <p class="text-on-surface-variant inline-flex items-center gap-1">{{dict.DETAIL_PAGE_COVERAGE_CTA}}<span class="material-symbols-outlined text-sm" data-icon="open_in_new">open_in_new</span></p>
+        </div>
+      </div>
+      <div>
         <a [href]="googleCalendarUrl()" target="_blank" class="w-full inline-flex items-center justify-center gap-3 bg-linear-to-r from-primary to-primary-container text-gray-400 px-8 py-4 rounded-lg font-bold shadow-lg hover:opacity-90 transition-all active:scale-95 group">
           <span class="material-symbols-outlined" data-icon="event_available">event_available</span>
           {{dict.DETAIL_PAGE_ADD_GOOGLE_CALENDAR}}
